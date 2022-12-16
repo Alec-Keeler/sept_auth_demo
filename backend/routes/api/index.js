@@ -46,13 +46,13 @@ router.use('/users', usersRouter);
 //     }
 // );
 
-// const { requireAuth } = require('../../utils/auth.js');
-// router.get(
-//     '/require-auth',
-//     requireAuth,
-//     (req, res) => {
-//         return res.json(req.user);
-//     }
-// );
+const { requireAuth } = require('../../utils/auth.js');
+router.get(
+    '/require-auth',
+    requireAuth,
+    (req, res) => {
+        return res.json(req.user);
+    }
+);
 
 module.exports = router;
